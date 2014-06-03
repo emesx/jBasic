@@ -1,0 +1,29 @@
+10 READ A0, B0
+
+11 LET A = A0
+12 LET B = B0
+
+20 IF A = 0 THEN 80
+
+30 IF B = 0 THEN 50
+31 IF A > B THEN 34
+32 LET B = B - A
+33 GOTO 30
+34 LET A = A - B
+35 GOTO 30
+
+50 PRINT "GCD(", A0, ",", B0, ") =", A
+51 GOTO 10
+
+80 LET A = B
+81 GOTO 50
+
+999 END
+
+100 REM --------------- Inputs for A0 and B0 ----------------------------------
+101 DATA 23,   30
+102 DATA 121,  11
+103 DATA 44,   92
+104 DATA 382, 403
+105 DATA 943, 345
+106 DATA 56,  732
